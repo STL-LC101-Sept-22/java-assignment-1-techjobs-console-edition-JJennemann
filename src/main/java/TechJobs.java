@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -10,7 +7,7 @@ public class TechJobs {
 
     static Scanner in = new Scanner(System.in);
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
@@ -26,6 +23,7 @@ public class TechJobs {
         actionChoices.put("list", "List");
 
         System.out.println("Welcome to LaunchCode's TechJobs App!");
+
 
         // Allow the user to search until they manually quit
         while (true) {
@@ -112,14 +110,43 @@ public class TechJobs {
                 validChoice = true;
             }
 
-        } while(!validChoice);
+        } while (!validChoice);
 
         return choiceKeys[choiceIdx];
     }
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        if(someJobs.isEmpty()){
+            System.out.println("No Results");
+        } else{
+                for(HashMap<String, String> jobs : someJobs) {
+                for(Map.Entry<String, String> job : jobs.entrySet()) {
+                    System.out.println("*****");
+                    for (int i = 0; i < jobs.size(); i++) {
+                        Object[] key = jobs.keySet().toArray();
+                        System.out.println(key[i] + ": " + jobs.get(key[i]));
+                    }
+                    System.out.println("*****\n");
+                }
+            }
+        }
 
-        System.out.println("printJobs is not implemented yet");
     }
+
+
+//        if(someJobs.isEmpty()){
+//            System.out.println("\nNo Results");
+//        } else{
+//            for (HashMap<String, String> jobs : someJobs) {
+//                System.out.println("*****\n" + "position type: " + jobs.get("position type") + "\nname: " +
+//                        jobs.get("name") + "\nemployer: " + jobs.get("employer") + "\nlocation: " +
+//                        jobs.get("location") + "\ncore competency" + jobs.get("core competency") +
+//                        "" +
+//                        "\n*****\n" );
+//            }
+//        }
+
+
+
 }

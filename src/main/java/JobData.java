@@ -5,10 +5,7 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -98,9 +95,44 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+        for (HashMap<String, String> row: allJobs){
+
+
+
+//                for(int i=0; i<row.size(); i++){
+//                    Object[] key = row.keySet().toArray();
+//                    String aValue = row.get(key[i]);
+//                    if(aValue.contains(value) || !jobs.contains(value)){
+//                        jobs.add(row);
+//                    }
+//                }
+
+
+
+
+//            for(int i=0; i<row.size(); i++){
+//                Object[] aValue = row.values().toArray();
+//                if(aValue[i].equals(value)){
+//                    jobs.add(row);
+//                }
+//            }
+
+
+//            if(!jobs.contains(value)){
+//                if(row.containsValue((value))){
+//                    jobs.add(row);
+//                }
+//            }
+
+
+            }
+        return jobs;
+        }
         // TODO - implement this method
-        return null;
-    }
+
+
 
     /**
      * Read in data from a CSV file and store it in a list
