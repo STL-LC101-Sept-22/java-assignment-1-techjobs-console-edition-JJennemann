@@ -98,16 +98,14 @@ public class JobData {
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row: allJobs){
-
-
-
-//                for(int i=0; i<row.size(); i++){
-//                    Object[] key = row.keySet().toArray();
-//                    String aValue = row.get(key[i]);
-//                    if(aValue.contains(value) || !jobs.contains(value)){
-//                        jobs.add(row);
-//                    }
-//                }
+                for(int i=0; i<row.size(); i++){
+                    Object[] key = row.keySet().toArray();
+                    String aValue = row.get(key[i]);
+                    if(aValue.contains(value)){
+                        jobs.add(row);
+                        break;
+                    }
+                }
 
 
 
@@ -120,11 +118,7 @@ public class JobData {
 //            }
 
 
-//            if(!jobs.contains(value)){
-//                if(row.containsValue((value))){
-//                    jobs.add(row);
-//                }
-//            }
+
 
 
             }
